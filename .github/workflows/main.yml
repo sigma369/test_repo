@@ -31,7 +31,7 @@ jobs:
 
     steps:
       - name: download the repo
-        uses: action/checkout@v4
+        uses: actions/checkout@v4
         with:
           repository: sigma369/test_repo
           ref: master
