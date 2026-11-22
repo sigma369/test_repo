@@ -27,7 +27,7 @@ jobs:
         
   test:
     needs:  build
-    runs-on: ububuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: download the repo
