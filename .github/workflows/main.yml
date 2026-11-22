@@ -17,6 +17,14 @@ jobs:
         with:
           repository: sigma369/test_repo
           ref: master
+      - name: set up python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: run the file
+        run: python program.py
+      
 
     
 
