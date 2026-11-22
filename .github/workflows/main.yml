@@ -1,0 +1,25 @@
+name: test_repo
+
+on:
+  push:
+    branches:
+      - master
+
+  workflow_dispatch:
+
+jobs:
+  built:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: download the repo
+        uses: actions/checkout@v4
+        with:
+          repository: sigma369/test_repo
+          ref: master
+
+    
+
+
+  
+  
