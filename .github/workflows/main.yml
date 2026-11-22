@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  built:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,6 +24,26 @@ jobs:
 
       - name: run the file
         run: python program.py
+        
+  test:
+    needs:  build
+    runs-on: ububuntu-latest
+
+    steps:
+      - name: download the repo
+        uses: action/checkout@v4
+        with:
+          repository: sigma369/test_repo
+          ref: master
+
+      - name: set up python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: run unit test cases
+        run: python test.py
+        
       
 
     
